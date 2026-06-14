@@ -162,3 +162,33 @@ and document.
    으로 더 의미 있을 수 있음(후속 가능).
 3. E3 prune 0%는 버그 아님: prob-mass 95% 커버에 8 experts가 거의 다 필요(top-2라
    질량이 분산) → keep≈8 → prune 0. 구조가 답을 그대로 보여준 것.
+
+---
+
+## 2026-06-15 — E1 sink: pos-0 토큰 정체성 검증 (trivial 여부 점검)
+
+**동기**: E1의 "pos-0 일치 80.5%, 교차도메인 Jaccard 74~79%"가 *내용 무관 sink*인지,
+아니면 단순히 "모든 입력의 pos-0이 동일 BOS라서 같은 expert로 가는 trivial 결과"인지
+확인. probe_sink.py와 **동일한 토크나이징**(`tok(ex["text"], ...)`, add_special_tokens
+기본 True)으로 6개 데이터셋 × 10예시의 pos-0 token_id/decoded를 추출.
+
+**결과**:
+- **Qwen 토크나이저는 BOS를 붙이지 않음** (`bos_token=None`, add_bos 없음).
+  → pos-0은 특수토큰이 아니라 실제 첫 단어 토큰.
+- **pos-0 토큰은 데이터셋마다 다름** (union 19종):
+  - gsm8k/svamp(math): `A`,`The`,`Jordan`,`Tim`,`Joe`,`B`,`In`,`If`… (이름·관사, 다양)
+  - humaneval+(code): `\n`,`\n\n`,`from`
+  - mbpp+(code): `Write` (고정)
+  - mnli/snli(nli): `Prem`("Premise:"의 첫 조각, 고정)
+  - 단일 동일 토큰? **아니오** (`all identical = False`).
+
+**판정: 발견 유효 (trivial 아님).** 서로 다른 pos-0 토큰(math의 A/The/Jordan… vs
+code의 \n/Write vs nli의 Prem)인데도 pos-0 sink expert 집합이 교차도메인 74~79%
+겹친다는 것은, "같은 토큰→같은 expert"로 설명되지 않고 **토큰 정체성과 무관하게
+위치(pos-0) 자체가 고정 expert 집합을 부른다**는 sink 주장을 입증한다. 특히 math는
+pos-0 토큰이 7종으로 다양한데도 sink 일치가 높아 trivial 반박을 더 강화.
+
+**유의(정직성)**: mbpp+(`Write`)·nli(`Prem`)는 데이터셋 내부에서 pos-0이 사실상 단일
+토큰이라, 그 두 데이터셋 *내부*의 pos-0 일치는 토큰 동일성 효과를 일부 포함한다.
+그러나 (1) gsm8k/svamp는 pos-0이 다양함에도 sink가 강하고, (2) 핵심 지표인 *교차도메인
+Jaccard*는 서로 다른 토큰 간 비교이므로, sink 결론 자체는 토큰 동일성으로 환원되지 않음.
