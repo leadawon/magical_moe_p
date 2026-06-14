@@ -1,0 +1,141 @@
+{
+  "N_eval": 40,
+  "coverages": [
+    0.95,
+    0.99
+  ],
+  "per_domain": {
+    "math": {
+      "baseline": {
+        "nll": 2.0581390137241637,
+        "ppl": 7.831382146112348,
+        "next_tok_acc": 0.5455607476635514,
+        "tokens": 2568
+      },
+      "matched_cov95": {
+        "nll": 2.0581390137241637,
+        "ppl": 7.831382146112348,
+        "next_tok_acc": 0.5455607476635514,
+        "tokens": 2568,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "matched_cov99": {
+        "nll": 2.0581390137241637,
+        "ppl": 7.831382146112348,
+        "next_tok_acc": 0.5455607476635514,
+        "tokens": 2568,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "mismatched_code_cov95": {
+        "nll": 2.0581390137241637,
+        "ppl": 7.831382146112348,
+        "next_tok_acc": 0.5455607476635514,
+        "tokens": 2568,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "mismatched_nli_cov95": {
+        "nll": 2.0581390137241637,
+        "ppl": 7.831382146112348,
+        "next_tok_acc": 0.5455607476635514,
+        "tokens": 2568,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      }
+    },
+    "code": {
+      "baseline": {
+        "nll": 3.112260963831497,
+        "ppl": 22.471794922127913,
+        "next_tok_acc": 0.4385692068429238,
+        "tokens": 643
+      },
+      "matched_cov95": {
+        "nll": 3.112260963831497,
+        "ppl": 22.471794922127913,
+        "next_tok_acc": 0.4385692068429238,
+        "tokens": 643,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "matched_cov99": {
+        "nll": 3.112260963831497,
+        "ppl": 22.471794922127913,
+        "next_tok_acc": 0.4385692068429238,
+        "tokens": 643,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "mismatched_math_cov95": {
+        "nll": 3.112260963831497,
+        "ppl": 22.471794922127913,
+        "next_tok_acc": 0.4385692068429238,
+        "tokens": 643,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "mismatched_nli_cov95": {
+        "nll": 3.112260963831497,
+        "ppl": 22.471794922127913,
+        "next_tok_acc": 0.4385692068429238,
+        "tokens": 643,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      }
+    },
+    "nli": {
+      "baseline": {
+        "nll": 3.1483714584043763,
+        "ppl": 23.298091757648066,
+        "next_tok_acc": 0.4183423246689554,
+        "tokens": 2039
+      },
+      "matched_cov95": {
+        "nll": 3.1483714584043763,
+        "ppl": 23.298091757648066,
+        "next_tok_acc": 0.4183423246689554,
+        "tokens": 2039,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "matched_cov99": {
+        "nll": 3.1483714584043763,
+        "ppl": 23.298091757648066,
+        "next_tok_acc": 0.4183423246689554,
+        "tokens": 2039,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "mismatched_math_cov95": {
+        "nll": 3.1483714584043763,
+        "ppl": 23.298091757648066,
+        "next_tok_acc": 0.4183423246689554,
+        "tokens": 2039,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      },
+      "mismatched_code_cov95": {
+        "nll": 3.1483714584043763,
+        "ppl": 23.298091757648066,
+        "next_tok_acc": 0.4183423246689554,
+        "tokens": 2039,
+        "prune_pct": 0.0,
+        "d_ppl": 0.0,
+        "d_nextacc": 0.0
+      }
+    }
+  }
+}

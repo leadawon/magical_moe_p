@@ -1,0 +1,30 @@
+[setup] 48 layers, routing mass loaded for ['math', 'code', 'nli']
+Loading checkpoint shards:   0%|          | 0/16 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▋         | 1/16 [00:03<00:55,  3.71s/it]Loading checkpoint shards:  12%|█▎        | 2/16 [00:06<00:41,  2.93s/it]Loading checkpoint shards:  19%|█▉        | 3/16 [00:08<00:35,  2.76s/it]Loading checkpoint shards:  25%|██▌       | 4/16 [00:11<00:33,  2.78s/it]Loading checkpoint shards:  31%|███▏      | 5/16 [00:13<00:29,  2.64s/it]Loading checkpoint shards:  38%|███▊      | 6/16 [00:16<00:25,  2.56s/it]Loading checkpoint shards:  44%|████▍     | 7/16 [00:18<00:22,  2.55s/it]Loading checkpoint shards:  50%|█████     | 8/16 [00:21<00:20,  2.59s/it]Loading checkpoint shards:  56%|█████▋    | 9/16 [00:24<00:18,  2.65s/it]Loading checkpoint shards:  62%|██████▎   | 10/16 [00:26<00:15,  2.63s/it]Loading checkpoint shards:  69%|██████▉   | 11/16 [00:29<00:13,  2.60s/it]Loading checkpoint shards:  75%|███████▌  | 12/16 [00:31<00:10,  2.58s/it]Loading checkpoint shards:  81%|████████▏ | 13/16 [00:34<00:07,  2.58s/it]Loading checkpoint shards:  88%|████████▊ | 14/16 [00:37<00:05,  2.59s/it]Loading checkpoint shards:  94%|█████████▍| 15/16 [00:40<00:02,  2.72s/it]Loading checkpoint shards: 100%|██████████| 16/16 [00:40<00:00,  2.03s/it]Loading checkpoint shards: 100%|██████████| 16/16 [00:40<00:00,  2.53s/it]
+[setup] gate masking hooks installed
+[eval] math: 40 held-out examples (gsm8k)
+[eval] code: 40 held-out examples (mbpp_plus)
+[eval] nli: 40 held-out examples (mnli)
+
+=== domain=math ===
+  baseline:  ppl 10.830  nll 2.3823  nextacc 53.1%  (2419 tok)
+  matched  cov95 (prune 20.8%): ppl 10.935 (Δ+0.105)  nextacc 53.4% (Δ+0.3pp)
+  matched  cov99 (prune  8.1%): ppl 10.756 (Δ-0.074)  nextacc 53.3% (Δ+0.2pp)
+  MISmatch code cov95 (prune 16.1%): ppl 11.909 (Δ+1.079)  nextacc 51.8% (Δ-1.2pp)
+  MISmatch  nli cov95 (prune 22.3%): ppl 10.804 (Δ-0.026)  nextacc 52.5% (Δ-0.6pp)
+
+=== domain=code ===
+  baseline:  ppl 10.912  nll 2.3898  nextacc 57.1%  (576 tok)
+  matched  cov95 (prune 16.1%): ppl 11.206 (Δ+0.294)  nextacc 49.5% (Δ-7.6pp)
+  matched  cov99 (prune  6.1%): ppl 10.886 (Δ-0.026)  nextacc 57.5% (Δ+0.3pp)
+  MISmatch math cov95 (prune 20.8%): ppl 14.247 (Δ+3.336)  nextacc 53.6% (Δ-3.5pp)
+  MISmatch  nli cov95 (prune 22.3%): ppl 14.800 (Δ+3.888)  nextacc 51.9% (Δ-5.2pp)
+
+=== domain=nli ===
+  baseline:  ppl 32.813  nll 3.4908  nextacc 44.3%  (1813 tok)
+  matched  cov95 (prune 22.3%): ppl 33.054 (Δ+0.242)  nextacc 44.3% (Δ-0.1pp)
+  matched  cov99 (prune  8.6%): ppl 32.718 (Δ-0.095)  nextacc 44.5% (Δ+0.1pp)
+  MISmatch math cov95 (prune 20.8%): ppl 27.054 (Δ-5.759)  nextacc 44.3% (Δ+0.0pp)
+  MISmatch code cov95 (prune 16.1%): ppl 47.051 (Δ+14.239)  nextacc 39.0% (Δ-5.4pp)
+
+saved results_r2/e3_pruning_eval.json
+[gpu_release] [probe_e3] torch still reserves 61.18 GB; this process now exits → the OS releases ALL GPU memory it held.

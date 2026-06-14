@@ -1,0 +1,25 @@
+Loading checkpoint shards:   0%|          | 0/16 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▋         | 1/16 [00:12<03:14, 12.95s/it]Loading checkpoint shards:  12%|█▎        | 2/16 [00:21<02:28, 10.60s/it]Loading checkpoint shards:  19%|█▉        | 3/16 [00:31<02:14, 10.33s/it]Loading checkpoint shards:  25%|██▌       | 4/16 [00:41<02:00, 10.01s/it]Loading checkpoint shards:  31%|███▏      | 5/16 [00:50<01:47,  9.80s/it]Loading checkpoint shards:  38%|███▊      | 6/16 [01:01<01:39,  9.99s/it]Loading checkpoint shards:  44%|████▍     | 7/16 [01:09<01:25,  9.55s/it]Loading checkpoint shards:  50%|█████     | 8/16 [01:18<01:14,  9.33s/it]Loading checkpoint shards:  56%|█████▋    | 9/16 [01:29<01:08,  9.84s/it]Loading checkpoint shards:  62%|██████▎   | 10/16 [01:39<00:59,  9.98s/it]Loading checkpoint shards:  69%|██████▉   | 11/16 [01:51<00:51, 10.36s/it]Loading checkpoint shards:  75%|███████▌  | 12/16 [02:02<00:42, 10.71s/it]Loading checkpoint shards:  81%|████████▏ | 13/16 [02:12<00:31, 10.52s/it]Loading checkpoint shards:  88%|████████▊ | 14/16 [02:22<00:20, 10.26s/it]Loading checkpoint shards:  94%|█████████▍| 15/16 [02:34<00:10, 10.73s/it]Loading checkpoint shards: 100%|██████████| 16/16 [02:36<00:00,  8.25s/it]Loading checkpoint shards: 100%|██████████| 16/16 [02:36<00:00,  9.80s/it]
+[setup] 48 gate layers
+
+=== per-position cross-example top-8 overlap ===
+  position 0:  80.5%   (n=180)
+  position 1:  34.4%   (n=180)
+  position 2:  28.3%   (n=180)
+  position 3:  22.8%   (n=180)
+  position 4:  20.0%   (n=180)
+  position 5:  18.2%   (n=180)
+  position 6:  17.6%   (n=180)
+  position 7:  17.3%   (n=180)
+  position>=20 (baseline):  12.1%
+
+=== pos-0 sink set (experts in >=50% of examples' top-8) ===
+  mean size: 7.5 experts/layer
+  cross-domain overlap of pos-0 sink set:
+    math ∩ code: Jaccard 78.9%
+    math ∩ nli: Jaccard 77.8%
+    code ∩ nli: Jaccard 73.7%
+
+  routing mass (all tokens) captured by pos-0 sink experts: 8.1%
+  # early positions that are sink-like (overlap > deep+0.2): 2
+saved results_r2/e1_sink.json
+[gpu_release] [probe_sink] torch still reserves 61.18 GB; this process now exits → the OS releases ALL GPU memory it held.

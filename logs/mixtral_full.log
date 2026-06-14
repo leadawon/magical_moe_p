@@ -1,0 +1,191 @@
+############################################################
+MIXTRAL FULL SUITE  start 2026-06-15 02:17:05   GPUs=4,5,6,7
+############################################################
+=== [1/7] Round-1 routing probe (H1-H6 data), N=60 ===
+2026-06-15 02:17:08,884 INFO PyTorch version 2.5.1+cu124 available.
+2026-06-15 02:17:09,187 INFO ============================================================
+2026-06-15 02:17:09,187 INFO MoE ROUTING PROBE  (Qwen3-30B-A3B)
+2026-06-15 02:17:09,187 INFO   GPUs: 4,5,6,7
+2026-06-15 02:17:09,187 INFO   datasets: ['gsm8k', 'svamp', 'humaneval_plus', 'mbpp_plus', 'mnli', 'snli']
+2026-06-15 02:17:09,187 INFO   examples/dataset: 60  max_len: 512
+2026-06-15 02:17:09,187 INFO ============================================================
+2026-06-15 02:17:09,187 INFO Loading tokenizer + model from /data1/ai25170474/models/Mixtral-8x7B-Instruct-v0.1
+Loading checkpoint shards:   0%|          | 0/19 [00:00<?, ?it/s]Loading checkpoint shards:   5%|▌         | 1/19 [00:02<00:39,  2.22s/it]Loading checkpoint shards:  11%|█         | 2/19 [00:03<00:31,  1.86s/it]Loading checkpoint shards:  16%|█▌        | 3/19 [00:05<00:28,  1.78s/it]Loading checkpoint shards:  21%|██        | 4/19 [00:07<00:26,  1.74s/it]Loading checkpoint shards:  26%|██▋       | 5/19 [00:08<00:24,  1.75s/it]Loading checkpoint shards:  32%|███▏      | 6/19 [00:10<00:22,  1.74s/it]Loading checkpoint shards:  37%|███▋      | 7/19 [00:12<00:20,  1.72s/it]Loading checkpoint shards:  42%|████▏     | 8/19 [00:13<00:18,  1.68s/it]Loading checkpoint shards:  47%|████▋     | 9/19 [00:15<00:16,  1.69s/it]Loading checkpoint shards:  53%|█████▎    | 10/19 [00:17<00:15,  1.69s/it]Loading checkpoint shards:  58%|█████▊    | 11/19 [00:19<00:13,  1.70s/it]Loading checkpoint shards:  63%|██████▎   | 12/19 [00:20<00:11,  1.71s/it]Loading checkpoint shards:  68%|██████▊   | 13/19 [00:22<00:10,  1.71s/it]Loading checkpoint shards:  74%|███████▎  | 14/19 [00:24<00:08,  1.72s/it]Loading checkpoint shards:  79%|███████▉  | 15/19 [00:26<00:06,  1.73s/it]Loading checkpoint shards:  84%|████████▍ | 16/19 [00:27<00:05,  1.73s/it]Loading checkpoint shards:  89%|████████▉ | 17/19 [00:29<00:03,  1.71s/it]Loading checkpoint shards:  95%|█████████▍| 18/19 [00:31<00:01,  1.71s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:31<00:00,  1.28s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:31<00:00,  1.65s/it]
+2026-06-15 02:17:50,216 WARNING Some parameters are on the meta device because they were offloaded to the cpu.
+2026-06-15 02:17:50,447 INFO Model loaded. Input device: cuda:0
+2026-06-15 02:17:50,449 INFO MoE detected: block_attr=block_sparse_moe layers=32 experts=8 top_k=2
+2026-06-15 02:17:50,450 INFO Hooked 32 MoE gate modules.
+2026-06-15 02:17:50,450 INFO ------------------------------------------------------------
+2026-06-15 02:17:50,450 INFO [1/6] dataset=gsm8k domain=math
+2026-06-15 02:17:54,071 INFO   loaded 60 examples
+2026-06-15 02:18:24,649 INFO   gsm8k: 10/60  0.33 ex/s  eta 153s
+2026-06-15 02:18:51,517 INFO   gsm8k: 20/60  0.35 ex/s  eta 115s
+2026-06-15 02:19:21,029 INFO   gsm8k: 30/60  0.34 ex/s  eta 87s
+2026-06-15 02:19:50,198 INFO   gsm8k: 40/60  0.34 ex/s  eta 58s
+2026-06-15 02:20:15,670 INFO   gsm8k: 50/60  0.35 ex/s  eta 28s
+2026-06-15 02:20:46,262 INFO   gsm8k: 60/60  0.35 ex/s  eta 0s
+2026-06-15 02:20:46,268 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/gsm8k_routing.npz  (172s, 126048 tokens routed)
+2026-06-15 02:20:46,268 INFO ------------------------------------------------------------
+2026-06-15 02:20:46,268 INFO [2/6] dataset=svamp domain=math
+2026-06-15 02:20:49,074 INFO   loaded 60 examples
+2026-06-15 02:21:17,820 INFO   svamp: 10/60  0.35 ex/s  eta 144s
+2026-06-15 02:21:46,525 INFO   svamp: 20/60  0.35 ex/s  eta 115s
+2026-06-15 02:22:15,782 INFO   svamp: 30/60  0.35 ex/s  eta 87s
+2026-06-15 02:22:44,726 INFO   svamp: 40/60  0.35 ex/s  eta 58s
+2026-06-15 02:23:11,468 INFO   svamp: 50/60  0.35 ex/s  eta 28s
+2026-06-15 02:23:41,648 INFO   svamp: 60/60  0.35 ex/s  eta 0s
+2026-06-15 02:23:41,654 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/svamp_routing.npz  (173s, 84896 tokens routed)
+2026-06-15 02:23:41,655 INFO ------------------------------------------------------------
+2026-06-15 02:23:41,655 INFO [3/6] dataset=humaneval_plus domain=code
+2026-06-15 02:23:44,449 INFO   loaded 60 examples
+2026-06-15 02:24:14,133 INFO   humaneval_plus: 10/60  0.34 ex/s  eta 148s
+2026-06-15 02:24:42,579 INFO   humaneval_plus: 20/60  0.34 ex/s  eta 116s
+2026-06-15 02:25:12,185 INFO   humaneval_plus: 30/60  0.34 ex/s  eta 88s
+2026-06-15 02:25:41,323 INFO   humaneval_plus: 40/60  0.34 ex/s  eta 58s
+2026-06-15 02:26:09,792 INFO   humaneval_plus: 50/60  0.34 ex/s  eta 29s
+2026-06-15 02:26:38,958 INFO   humaneval_plus: 60/60  0.34 ex/s  eta 0s
+2026-06-15 02:26:38,965 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/humaneval_plus_routing.npz  (175s, 324448 tokens routed)
+2026-06-15 02:26:38,966 INFO ------------------------------------------------------------
+2026-06-15 02:26:38,966 INFO [4/6] dataset=mbpp_plus domain=code
+2026-06-15 02:26:41,768 INFO   loaded 60 examples
+2026-06-15 02:27:04,344 INFO   mbpp_plus: 10/60  0.44 ex/s  eta 113s
+2026-06-15 02:27:31,249 INFO   mbpp_plus: 20/60  0.40 ex/s  eta 99s
+2026-06-15 02:27:57,224 INFO   mbpp_plus: 30/60  0.40 ex/s  eta 75s
+2026-06-15 02:28:22,513 INFO   mbpp_plus: 40/60  0.40 ex/s  eta 50s
+2026-06-15 02:28:47,043 INFO   mbpp_plus: 50/60  0.40 ex/s  eta 25s
+2026-06-15 02:29:11,416 INFO   mbpp_plus: 60/60  0.40 ex/s  eta 0s
+2026-06-15 02:29:11,424 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/mbpp_plus_routing.npz  (150s, 44576 tokens routed)
+2026-06-15 02:29:11,425 INFO ------------------------------------------------------------
+2026-06-15 02:29:11,425 INFO [5/6] dataset=mnli domain=nli
+2026-06-15 02:29:14,843 INFO   loaded 60 examples
+2026-06-15 02:29:43,487 INFO   mnli: 10/60  0.35 ex/s  eta 143s
+2026-06-15 02:30:12,558 INFO   mnli: 20/60  0.35 ex/s  eta 115s
+2026-06-15 02:30:40,902 INFO   mnli: 30/60  0.35 ex/s  eta 86s
+2026-06-15 02:31:08,001 INFO   mnli: 40/60  0.35 ex/s  eta 57s
+2026-06-15 02:31:35,429 INFO   mnli: 50/60  0.36 ex/s  eta 28s
+2026-06-15 02:32:06,400 INFO   mnli: 60/60  0.35 ex/s  eta 0s
+2026-06-15 02:32:06,407 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/mnli_routing.npz  (172s, 98912 tokens routed)
+2026-06-15 02:32:06,407 INFO ------------------------------------------------------------
+2026-06-15 02:32:06,407 INFO [6/6] dataset=snli domain=nli
+2026-06-15 02:32:09,589 INFO   loaded 60 examples
+2026-06-15 02:32:37,613 INFO   snli: 10/60  0.36 ex/s  eta 140s
+2026-06-15 02:33:04,943 INFO   snli: 20/60  0.36 ex/s  eta 111s
+2026-06-15 02:33:28,494 INFO   snli: 30/60  0.38 ex/s  eta 79s
+2026-06-15 02:33:54,069 INFO   snli: 40/60  0.38 ex/s  eta 52s
+2026-06-15 02:34:20,563 INFO   snli: 50/60  0.38 ex/s  eta 26s
+2026-06-15 02:34:50,460 INFO   snli: 60/60  0.37 ex/s  eta 0s
+2026-06-15 02:34:50,469 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/snli_routing.npz  (161s, 65056 tokens routed)
+2026-06-15 02:34:50,470 INFO ============================================================
+2026-06-15 02:34:50,470 INFO PROBE COMPLETE in 1020s
+2026-06-15 02:34:50,470 INFO Run: python -m src.analyze  to produce FINDINGS.md
+2026-06-15 02:34:50,470 INFO ============================================================
+[gpu_release] [probe] torch still reserves 90.34 GB; this process now exits → the OS releases ALL GPU memory it held.
+=== [2/7] analyze H1-H6 ===
+Loaded 6 datasets: ['gsm8k', 'humaneval_plus', 'mbpp_plus', 'mnli', 'snli', 'svamp']  (num_experts=8)
+H1: PARTIAL — weak but present domain structure.  NOTE: very high cross-domain similarity (0.93) ⇒ large shared/redundant routing.
+H2: NOT SUPPORTED — load is fairly balanced.
+H3: PARTIAL/FLAT — no strong monotonic depth trend; see peak layer.
+H4: SUPPORTED — routing is low-margin / high-entropy (fragile selection).
+H5: NOT SUPPORTED — domains use largely disjoint experts.
+H6: SUPPORTED — routing fingerprints strongly encode domain.
+
+Wrote /data1/ai25170474/workspace/magical_moe_probe/results_mixtral/FINDINGS.md
+=== [3/7] P1+P3 redundancy / top-k ===
+Loading checkpoint shards:   0%|          | 0/19 [00:00<?, ?it/s]Loading checkpoint shards:   5%|▌         | 1/19 [00:01<00:35,  1.96s/it]Loading checkpoint shards:  11%|█         | 2/19 [00:03<00:27,  1.64s/it]Loading checkpoint shards:  16%|█▌        | 3/19 [00:04<00:25,  1.58s/it]Loading checkpoint shards:  21%|██        | 4/19 [00:06<00:23,  1.54s/it]Loading checkpoint shards:  26%|██▋       | 5/19 [00:07<00:21,  1.54s/it]Loading checkpoint shards:  32%|███▏      | 6/19 [00:09<00:19,  1.53s/it]Loading checkpoint shards:  37%|███▋      | 7/19 [00:10<00:18,  1.52s/it]Loading checkpoint shards:  42%|████▏     | 8/19 [00:12<00:16,  1.48s/it]Loading checkpoint shards:  47%|████▋     | 9/19 [00:13<00:14,  1.49s/it]Loading checkpoint shards:  53%|█████▎    | 10/19 [00:15<00:13,  1.48s/it]Loading checkpoint shards:  58%|█████▊    | 11/19 [00:16<00:11,  1.50s/it]Loading checkpoint shards:  63%|██████▎   | 12/19 [00:18<00:10,  1.50s/it]Loading checkpoint shards:  68%|██████▊   | 13/19 [00:19<00:09,  1.51s/it]Loading checkpoint shards:  74%|███████▎  | 14/19 [00:21<00:07,  1.55s/it]Loading checkpoint shards:  79%|███████▉  | 15/19 [00:22<00:06,  1.53s/it]Loading checkpoint shards:  84%|████████▍ | 16/19 [00:24<00:04,  1.53s/it]Loading checkpoint shards:  89%|████████▉ | 17/19 [00:25<00:03,  1.51s/it]Loading checkpoint shards:  95%|█████████▍| 18/19 [00:27<00:01,  1.51s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:27<00:00,  1.14s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:27<00:00,  1.46s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+[setup] 24 prompts, layers=[2, 8, 15, 23, 29], target 512 tok
+[L02] cos=0.687 hi>0.9=0.0% effPR=6.9 rank90=7/8 | P3 k1=0.767 k2=0.411 k4=0.176 k6=0.069
+[L08] cos=0.549 hi>0.9=0.0% effPR=7.0 rank90=7/8 | P3 k1=0.823 k2=0.457 k4=0.187 k6=0.075
+[L15] cos=0.376 hi>0.9=0.0% effPR=6.9 rank90=6/8 | P3 k1=0.875 k2=0.465 k4=0.189 k6=0.075
+[L23] cos=0.623 hi>0.9=0.0% effPR=7.0 rank90=7/8 | P3 k1=0.653 k2=0.301 k4=0.114 k6=0.041
+[L29] cos=0.907 hi>0.9=75.0% effPR=6.8 rank90=6/8 | P3 k1=0.500 k2=0.239 k4=0.088 k6=0.031
+saved /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/p1_p3.json
+[gpu_release] [probe_redundancy] torch still reserves 90.34 GB; this process now exits → the OS releases ALL GPU memory it held.
+=== [4/7] P2+P4+P6 lexical / sink / instability ===
+Loading checkpoint shards:   0%|          | 0/19 [00:00<?, ?it/s]Loading checkpoint shards:   5%|▌         | 1/19 [00:01<00:35,  1.98s/it]Loading checkpoint shards:  11%|█         | 2/19 [00:03<00:27,  1.65s/it]Loading checkpoint shards:  16%|█▌        | 3/19 [00:04<00:25,  1.57s/it]Loading checkpoint shards:  21%|██        | 4/19 [00:06<00:22,  1.53s/it]Loading checkpoint shards:  26%|██▋       | 5/19 [00:07<00:21,  1.53s/it]Loading checkpoint shards:  32%|███▏      | 6/19 [00:09<00:19,  1.51s/it]Loading checkpoint shards:  37%|███▋      | 7/19 [00:10<00:18,  1.50s/it]Loading checkpoint shards:  42%|████▏     | 8/19 [00:12<00:16,  1.47s/it]Loading checkpoint shards:  47%|████▋     | 9/19 [00:13<00:15,  1.55s/it]Loading checkpoint shards:  53%|█████▎    | 10/19 [00:15<00:13,  1.52s/it]Loading checkpoint shards:  58%|█████▊    | 11/19 [00:16<00:12,  1.51s/it]Loading checkpoint shards:  63%|██████▎   | 12/19 [00:18<00:10,  1.52s/it]Loading checkpoint shards:  68%|██████▊   | 13/19 [00:19<00:09,  1.51s/it]Loading checkpoint shards:  74%|███████▎  | 14/19 [00:21<00:07,  1.55s/it]Loading checkpoint shards:  79%|███████▉  | 15/19 [00:23<00:06,  1.54s/it]Loading checkpoint shards:  84%|████████▍ | 16/19 [00:24<00:04,  1.53s/it]Loading checkpoint shards:  89%|████████▉ | 17/19 [00:26<00:03,  1.51s/it]Loading checkpoint shards:  95%|█████████▍| 18/19 [00:27<00:01,  1.51s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:27<00:00,  1.14s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:27<00:00,  1.46s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+[setup] 32 gate layers, top_k(K)=2
+[P2/P4] captured 4373 tokens
+[P2] same-token top8 overlap=59.4%  random=25.5%  gap=33.9pp
+[P4] pos0 overlap=99.0%  other-pos=25.2%  (pos0 has 1 distinct first-tokens over 80 examples)
+[P6] mean top8 changed by irrelevant prefix=8.0%  (early 7.1 / mid 7.5 / late 7.3)
+saved /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/p2_p4_p6.json
+[gpu_release] [probe_routing_quality] torch still reserves 90.35 GB; this process now exits → the OS releases ALL GPU memory it held.
+=== [5/7] P5 dead + E2 prunability (no GPU) ===
+[setup] L=32 E=8 k=2 domains=['math', 'code', 'nli']
+[P5] global dead 0.00% | breadth0 23.0% | single-domain 29.3% | all-3 18.0%
+[E2 prob-mass basis, E3-consistent] 95% prune%: {'math': 0.0, 'code': 0.0, 'nli': 0.0} | all 0.0
+[E2 sel-freq basis, upper bound]      95% prune%: {'math': 2.0, 'code': 0.8, 'nli': 1.2} | all 0.4
+saved /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/p5_dead.npz and /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/e2_prunability.json
+P1: SUPPORTED — substantial redundancy
+P3: NOT SUPPORTED — all 8 matter
+P5: SUPPORTED — skewed/domain-gated
+P2: PARTIAL — token identity strongly biases routing
+P4: SUPPORTED — position 0 routes to a fixed expert set (sink)
+P6: NOT SUPPORTED — routing is stable
+
+Wrote /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/FINDINGS_R2.md
+=== [6/7] E1 sink anatomy ===
+Loading checkpoint shards:   0%|          | 0/19 [00:00<?, ?it/s]Loading checkpoint shards:   5%|▌         | 1/19 [00:01<00:27,  1.54s/it]Loading checkpoint shards:  11%|█         | 2/19 [00:02<00:24,  1.46s/it]Loading checkpoint shards:  16%|█▌        | 3/19 [00:04<00:23,  1.46s/it]Loading checkpoint shards:  21%|██        | 4/19 [00:05<00:22,  1.47s/it]Loading checkpoint shards:  26%|██▋       | 5/19 [00:07<00:20,  1.49s/it]Loading checkpoint shards:  32%|███▏      | 6/19 [00:08<00:19,  1.49s/it]Loading checkpoint shards:  37%|███▋      | 7/19 [00:10<00:17,  1.49s/it]Loading checkpoint shards:  42%|████▏     | 8/19 [00:11<00:16,  1.46s/it]Loading checkpoint shards:  47%|████▋     | 9/19 [00:13<00:14,  1.48s/it]Loading checkpoint shards:  53%|█████▎    | 10/19 [00:14<00:13,  1.48s/it]Loading checkpoint shards:  58%|█████▊    | 11/19 [00:16<00:11,  1.49s/it]Loading checkpoint shards:  63%|██████▎   | 12/19 [00:17<00:10,  1.50s/it]Loading checkpoint shards:  68%|██████▊   | 13/19 [00:19<00:09,  1.51s/it]Loading checkpoint shards:  74%|███████▎  | 14/19 [00:20<00:07,  1.50s/it]Loading checkpoint shards:  79%|███████▉  | 15/19 [00:22<00:06,  1.51s/it]Loading checkpoint shards:  84%|████████▍ | 16/19 [00:23<00:04,  1.52s/it]Loading checkpoint shards:  89%|████████▉ | 17/19 [00:25<00:03,  1.50s/it]Loading checkpoint shards:  95%|█████████▍| 18/19 [00:26<00:01,  1.51s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:27<00:00,  1.15s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:27<00:00,  1.43s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+[setup] 32 gate layers, top_k(K)=2, num_experts=8
+
+=== per-position cross-example top-8 overlap ===
+  position 0:  98.7%   (n=180)
+  position 1:  57.3%   (n=180)
+  position 2:  39.2%   (n=180)
+  position 3:  38.3%   (n=180)
+  position 4:  33.4%   (n=180)
+  position 5:  30.6%   (n=180)
+  position 6:  28.9%   (n=180)
+  position 7:  28.2%   (n=180)
+  position>=20 (baseline):  25.6%
+
+=== pos-0 sink set (experts in >=50% of examples' top-8) ===
+  mean size: 2.0 experts/layer
+  cross-domain overlap of pos-0 sink set:
+    math ∩ code: Jaccard 96.9%
+    math ∩ nli: Jaccard 100.0%
+    code ∩ nli: Jaccard 96.9%
+
+  routing mass (all tokens) captured by pos-0 sink experts: 26.2%
+  # early positions that are sink-like (overlap > deep+0.2): 2
+saved /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/e1_sink.json
+[gpu_release] [probe_sink] torch still reserves 90.34 GB; this process now exits → the OS releases ALL GPU memory it held.
+=== [7/7] E3 pruning accuracy validation ===
+[setup] 32 layers, routing mass loaded for ['math', 'code', 'nli']
+Loading checkpoint shards:   0%|          | 0/19 [00:00<?, ?it/s]Loading checkpoint shards:   5%|▌         | 1/19 [00:01<00:27,  1.53s/it]Loading checkpoint shards:  11%|█         | 2/19 [00:02<00:24,  1.45s/it]Loading checkpoint shards:  16%|█▌        | 3/19 [00:04<00:23,  1.46s/it]Loading checkpoint shards:  21%|██        | 4/19 [00:05<00:21,  1.46s/it]Loading checkpoint shards:  26%|██▋       | 5/19 [00:07<00:20,  1.48s/it]Loading checkpoint shards:  32%|███▏      | 6/19 [00:08<00:19,  1.48s/it]Loading checkpoint shards:  37%|███▋      | 7/19 [00:10<00:17,  1.48s/it]Loading checkpoint shards:  42%|████▏     | 8/19 [00:11<00:15,  1.45s/it]Loading checkpoint shards:  47%|████▋     | 9/19 [00:13<00:14,  1.47s/it]Loading checkpoint shards:  53%|█████▎    | 10/19 [00:14<00:13,  1.46s/it]Loading checkpoint shards:  58%|█████▊    | 11/19 [00:16<00:11,  1.48s/it]Loading checkpoint shards:  63%|██████▎   | 12/19 [00:17<00:10,  1.49s/it]Loading checkpoint shards:  68%|██████▊   | 13/19 [00:19<00:08,  1.49s/it]Loading checkpoint shards:  74%|███████▎  | 14/19 [00:20<00:07,  1.49s/it]Loading checkpoint shards:  79%|███████▉  | 15/19 [00:22<00:05,  1.49s/it]Loading checkpoint shards:  84%|████████▍ | 16/19 [00:23<00:04,  1.50s/it]Loading checkpoint shards:  89%|████████▉ | 17/19 [00:25<00:02,  1.49s/it]Loading checkpoint shards:  95%|█████████▍| 18/19 [00:26<00:01,  1.49s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:26<00:00,  1.13s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:26<00:00,  1.42s/it]
+Some parameters are on the meta device because they were offloaded to the cpu.
+[setup] gate masking hooks installed
+[eval] math: 40 held-out examples (gsm8k)
+[eval] code: 40 held-out examples (mbpp_plus)
+[eval] nli: 40 held-out examples (mnli)
+
+=== domain=math ===
+  baseline:  ppl 7.831  nll 2.0581  nextacc 54.6%  (2568 tok)
+  matched  cov95 (prune  0.0%): ppl 7.831 (Δ+0.000)  nextacc 54.6% (Δ+0.0pp)
+  matched  cov99 (prune  0.0%): ppl 7.831 (Δ+0.000)  nextacc 54.6% (Δ+0.0pp)
+  MISmatch code cov95 (prune  0.0%): ppl 7.831 (Δ+0.000)  nextacc 54.6% (Δ+0.0pp)
+  MISmatch  nli cov95 (prune  0.0%): ppl 7.831 (Δ+0.000)  nextacc 54.6% (Δ+0.0pp)
+
+=== domain=code ===
+  baseline:  ppl 22.472  nll 3.1123  nextacc 43.9%  (643 tok)
+  matched  cov95 (prune  0.0%): ppl 22.472 (Δ+0.000)  nextacc 43.9% (Δ+0.0pp)
+  matched  cov99 (prune  0.0%): ppl 22.472 (Δ+0.000)  nextacc 43.9% (Δ+0.0pp)
+  MISmatch math cov95 (prune  0.0%): ppl 22.472 (Δ+0.000)  nextacc 43.9% (Δ+0.0pp)
+  MISmatch  nli cov95 (prune  0.0%): ppl 22.472 (Δ+0.000)  nextacc 43.9% (Δ+0.0pp)
+
+=== domain=nli ===
+  baseline:  ppl 23.298  nll 3.1484  nextacc 41.8%  (2039 tok)
+  matched  cov95 (prune  0.0%): ppl 23.298 (Δ+0.000)  nextacc 41.8% (Δ+0.0pp)
+  matched  cov99 (prune  0.0%): ppl 23.298 (Δ+0.000)  nextacc 41.8% (Δ+0.0pp)
+  MISmatch math cov95 (prune  0.0%): ppl 23.298 (Δ+0.000)  nextacc 41.8% (Δ+0.0pp)
+  MISmatch code cov95 (prune  0.0%): ppl 23.298 (Δ+0.000)  nextacc 41.8% (Δ+0.0pp)
+
+saved /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral/e3_pruning_eval.json
+[gpu_release] [probe_e3] torch still reserves 90.34 GB; this process now exits → the OS releases ALL GPU memory it held.
+############################################################
+MIXTRAL FULL SUITE DONE 2026-06-15 03:23:23
+  Round-1: /data1/ai25170474/workspace/magical_moe_probe/results_mixtral  (FINDINGS.md, *_routing.npz)
+  Round-2/E: /data1/ai25170474/workspace/magical_moe_probe/results_r2_mixtral    (FINDINGS_R2.md, *.json)
+############################################################

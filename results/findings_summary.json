@@ -1,0 +1,38 @@
+{
+  "H1": {
+    "within": 0.8410646781903289,
+    "cross": 0.4227449551642249,
+    "gap": 0.41831972302610404,
+    "verdict": "SUPPORTED \u2014 measurable domain structure in routing."
+  },
+  "H2": {
+    "gini": 0.6696775306918621,
+    "dead_frac": 0.32397460937500006,
+    "hot_frac": 0.03068033854166666,
+    "verdict": "SUPPORTED \u2014 routing load is imbalanced (dead/hot experts present)."
+  },
+  "H3": {
+    "early": 0.31807058669764354,
+    "late": 0.32006615203796784,
+    "peak": 19,
+    "corr": 0.09028498183621031,
+    "verdict": "PARTIAL/FLAT \u2014 no strong monotonic depth trend; see peak layer."
+  },
+  "H4": {
+    "top1": 0.11231239551811673,
+    "topk_mass": 0.3879433174470191,
+    "norm_entropy": 0.8400445637641822,
+    "margin": 0.0022678586830779898,
+    "verdict": "SUPPORTED \u2014 routing is low-margin / high-entropy (fragile selection)."
+  },
+  "H5": {
+    "core_frac": 0.04296875,
+    "core_mass": 0.11988928422185723,
+    "verdict": "NOT SUPPORTED \u2014 domains use largely disjoint experts."
+  },
+  "H6": {
+    "accuracy": 0.9982817869415808,
+    "chance": 0.3333333333333333,
+    "verdict": "SUPPORTED \u2014 routing fingerprints strongly encode domain."
+  }
+}

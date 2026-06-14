@@ -1,0 +1,28 @@
+2026-06-15 01:43:40,276 INFO PyTorch version 2.5.1+cu124 available.
+2026-06-15 01:43:40,533 INFO ============================================================
+2026-06-15 01:43:40,533 INFO MoE ROUTING PROBE  (Qwen3-30B-A3B)
+2026-06-15 01:43:40,533 INFO   GPUs: 0,1,2,3,4,5,6,7
+2026-06-15 01:43:40,533 INFO   datasets: ['gsm8k', 'mnli']
+2026-06-15 01:43:40,533 INFO   examples/dataset: 3  max_len: 512
+2026-06-15 01:43:40,533 INFO ============================================================
+2026-06-15 01:43:40,533 INFO Loading tokenizer + model from /data1/ai25170474/models/Mixtral-8x7B-Instruct-v0.1
+Loading checkpoint shards:   0%|          | 0/19 [00:00<?, ?it/s]Loading checkpoint shards:   5%|▌         | 1/19 [00:01<00:28,  1.58s/it]Loading checkpoint shards:  11%|█         | 2/19 [00:02<00:25,  1.48s/it]Loading checkpoint shards:  16%|█▌        | 3/19 [00:04<00:23,  1.48s/it]Loading checkpoint shards:  21%|██        | 4/19 [00:05<00:22,  1.48s/it]Loading checkpoint shards:  26%|██▋       | 5/19 [00:07<00:20,  1.50s/it]Loading checkpoint shards:  32%|███▏      | 6/19 [00:09<00:19,  1.52s/it]Loading checkpoint shards:  37%|███▋      | 7/19 [00:10<00:18,  1.51s/it]Loading checkpoint shards:  42%|████▏     | 8/19 [00:11<00:16,  1.48s/it]Loading checkpoint shards:  47%|████▋     | 9/19 [00:13<00:14,  1.49s/it]Loading checkpoint shards:  53%|█████▎    | 10/19 [00:14<00:13,  1.48s/it]Loading checkpoint shards:  58%|█████▊    | 11/19 [00:16<00:11,  1.50s/it]Loading checkpoint shards:  63%|██████▎   | 12/19 [00:17<00:10,  1.50s/it]Loading checkpoint shards:  68%|██████▊   | 13/19 [00:19<00:09,  1.50s/it]Loading checkpoint shards:  74%|███████▎  | 14/19 [00:20<00:06,  1.27s/it]Loading checkpoint shards: 100%|██████████| 19/19 [00:20<00:00,  1.07s/it]
+2026-06-15 01:44:18,554 WARNING Some parameters are on the meta device because they were offloaded to the cpu.
+2026-06-15 01:44:19,157 INFO Model loaded. Input device: cuda:1
+2026-06-15 01:44:19,160 INFO MoE detected: block_attr=block_sparse_moe layers=32 experts=8 top_k=2
+2026-06-15 01:44:19,161 INFO Hooked 32 MoE gate modules.
+2026-06-15 01:44:19,161 INFO ------------------------------------------------------------
+2026-06-15 01:44:19,161 INFO [1/2] dataset=gsm8k domain=math
+2026-06-15 01:44:23,197 INFO   loaded 3 examples
+2026-06-15 01:45:18,159 INFO   gsm8k: 3/3  0.05 ex/s  eta 0s
+2026-06-15 01:45:18,188 INFO   saved results_mixtral_smoke/gsm8k_routing.npz  (55s, 6304 tokens routed)
+2026-06-15 01:45:18,188 INFO ------------------------------------------------------------
+2026-06-15 01:45:18,188 INFO [2/2] dataset=mnli domain=nli
+2026-06-15 01:45:21,924 INFO   loaded 3 examples
+2026-06-15 01:46:15,756 INFO   mnli: 3/3  0.06 ex/s  eta 0s
+2026-06-15 01:46:15,760 INFO   saved results_mixtral_smoke/mnli_routing.npz  (54s, 5792 tokens routed)
+2026-06-15 01:46:15,760 INFO ============================================================
+2026-06-15 01:46:15,760 INFO PROBE COMPLETE in 117s
+2026-06-15 01:46:15,760 INFO Run: python -m src.analyze  to produce FINDINGS.md
+2026-06-15 01:46:15,760 INFO ============================================================
+[gpu_release] [probe] torch still reserves 67.14 GB; this process now exits → the OS releases ALL GPU memory it held.

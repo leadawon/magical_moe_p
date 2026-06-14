@@ -1,0 +1,38 @@
+{
+  "H1": {
+    "within": 0.9586510715343688,
+    "cross": 0.9344137975896607,
+    "gap": 0.024237273944708093,
+    "verdict": "PARTIAL \u2014 weak but present domain structure.  NOTE: very high cross-domain similarity (0.93) \u21d2 large shared/redundant routing."
+  },
+  "H2": {
+    "gini": 0.15048456697013604,
+    "dead_frac": 0.0006510416666666666,
+    "hot_frac": 0.0,
+    "verdict": "NOT SUPPORTED \u2014 load is fairly balanced."
+  },
+  "H3": {
+    "early": 0.01849471993622576,
+    "late": 0.02068309702366024,
+    "peak": 8,
+    "corr": 0.08984003091965348,
+    "verdict": "PARTIAL/FLAT \u2014 no strong monotonic depth trend; see peak layer."
+  },
+  "H4": {
+    "top1": 0.47271697961517134,
+    "topk_mass": 0.6613540521220167,
+    "norm_entropy": 0.7246591519807563,
+    "margin": 0.08152651688342512,
+    "verdict": "SUPPORTED \u2014 routing is low-margin / high-entropy (fragile selection)."
+  },
+  "H5": {
+    "core_frac": 0.06640625,
+    "core_mass": 0.08440156429047173,
+    "verdict": "NOT SUPPORTED \u2014 domains use largely disjoint experts."
+  },
+  "H6": {
+    "accuracy": 0.9722222222222222,
+    "chance": 0.3333333333333333,
+    "verdict": "SUPPORTED \u2014 routing fingerprints strongly encode domain."
+  }
+}

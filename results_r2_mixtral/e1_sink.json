@@ -1,0 +1,19 @@
+{
+  "per_position_overlap": {
+    "0": 0.98728125,
+    "1": 0.5727604166666667,
+    "2": 0.3923125,
+    "3": 0.3828229166666667,
+    "4": 0.33438541666666666,
+    "5": 0.3055104166666667,
+    "6": 0.28875,
+    "7": 0.28211458333333334
+  },
+  "deep_position_overlap": 0.25579166666666664,
+  "pos0_sink_set_size_mean": 2.0,
+  "pos0_sink_jaccard_math_code": 0.9692307692307692,
+  "pos0_sink_jaccard_math_nli": 1.0,
+  "pos0_sink_jaccard_code_nli": 0.9692307692307692,
+  "routing_mass_in_pos0_sink": 0.26211671916525925,
+  "n_sinklike_positions": 2
+}

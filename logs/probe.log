@@ -1,0 +1,174 @@
+============================================================
+MoE ROUTING PROBE
+Model: Qwen3-30B-A3B   GPUs: 0,1,2,3
+Datasets: gsm8k svamp humaneval_plus mbpp_plus mnli snli
+Examples/dataset: 200   (forward-only, no generation)
+============================================================
+2026-06-11 20:08:27,398 INFO PyTorch version 2.5.1+cu124 available.
+2026-06-11 20:08:27,657 INFO ============================================================
+2026-06-11 20:08:27,657 INFO MoE ROUTING PROBE  (Qwen3-30B-A3B)
+2026-06-11 20:08:27,657 INFO   GPUs: 0,1,2,3
+2026-06-11 20:08:27,657 INFO   datasets: ['gsm8k', 'svamp', 'humaneval_plus', 'mbpp_plus', 'mnli', 'snli']
+2026-06-11 20:08:27,657 INFO   examples/dataset: 200  max_len: 512
+2026-06-11 20:08:27,657 INFO ============================================================
+2026-06-11 20:08:27,657 INFO Loading tokenizer + model from /data1/ai25170474/workspace/magical_moe_probe/model
+Loading checkpoint shards:   0%|          | 0/16 [00:00<?, ?it/s]Loading checkpoint shards:   6%|▋         | 1/16 [00:03<00:52,  3.47s/it]Loading checkpoint shards:  12%|█▎        | 2/16 [00:05<00:39,  2.80s/it]Loading checkpoint shards:  19%|█▉        | 3/16 [00:08<00:33,  2.59s/it]Loading checkpoint shards:  25%|██▌       | 4/16 [00:10<00:30,  2.57s/it]Loading checkpoint shards:  31%|███▏      | 5/16 [00:13<00:27,  2.49s/it]Loading checkpoint shards:  38%|███▊      | 6/16 [00:15<00:24,  2.44s/it]Loading checkpoint shards:  44%|████▍     | 7/16 [00:17<00:21,  2.44s/it]Loading checkpoint shards:  50%|█████     | 8/16 [00:20<00:19,  2.43s/it]Loading checkpoint shards:  56%|█████▋    | 9/16 [00:22<00:17,  2.52s/it]Loading checkpoint shards:  62%|██████▎   | 10/16 [00:25<00:14,  2.50s/it]Loading checkpoint shards:  69%|██████▉   | 11/16 [00:28<00:13,  2.68s/it]Loading checkpoint shards:  75%|███████▌  | 12/16 [00:31<00:11,  2.76s/it]Loading checkpoint shards:  81%|████████▏ | 13/16 [00:33<00:08,  2.70s/it]Loading checkpoint shards:  88%|████████▊ | 14/16 [00:36<00:05,  2.65s/it]Loading checkpoint shards:  94%|█████████▍| 15/16 [00:39<00:02,  2.72s/it]Loading checkpoint shards: 100%|██████████| 16/16 [00:39<00:00,  2.02s/it]Loading checkpoint shards: 100%|██████████| 16/16 [00:39<00:00,  2.49s/it]
+2026-06-11 20:09:32,648 INFO Model loaded. Input device: cuda:0
+2026-06-11 20:09:32,649 INFO Hooked 48 MoE gate modules.
+2026-06-11 20:09:32,649 INFO ------------------------------------------------------------
+2026-06-11 20:09:32,649 INFO [1/6] dataset=gsm8k domain=math
+2026-06-11 20:09:35,562 INFO   loaded 200 examples
+2026-06-11 20:10:00,687 INFO   gsm8k: 10/200  0.40 ex/s  eta 477s
+2026-06-11 20:10:22,225 INFO   gsm8k: 20/200  0.43 ex/s  eta 420s
+2026-06-11 20:10:43,472 INFO   gsm8k: 30/200  0.44 ex/s  eta 385s
+2026-06-11 20:11:05,640 INFO   gsm8k: 40/200  0.44 ex/s  eta 360s
+2026-06-11 20:11:26,620 INFO   gsm8k: 50/200  0.45 ex/s  eta 333s
+2026-06-11 20:11:47,890 INFO   gsm8k: 60/200  0.45 ex/s  eta 309s
+2026-06-11 20:12:08,963 INFO   gsm8k: 70/200  0.46 ex/s  eta 285s
+2026-06-11 20:12:30,032 INFO   gsm8k: 80/200  0.46 ex/s  eta 262s
+2026-06-11 20:12:50,946 INFO   gsm8k: 90/200  0.46 ex/s  eta 239s
+2026-06-11 20:13:12,208 INFO   gsm8k: 100/200  0.46 ex/s  eta 217s
+2026-06-11 20:13:33,799 INFO   gsm8k: 110/200  0.46 ex/s  eta 195s
+2026-06-11 20:13:55,051 INFO   gsm8k: 120/200  0.46 ex/s  eta 173s
+2026-06-11 20:14:16,071 INFO   gsm8k: 130/200  0.46 ex/s  eta 151s
+2026-06-11 20:14:37,474 INFO   gsm8k: 140/200  0.46 ex/s  eta 129s
+2026-06-11 20:14:58,478 INFO   gsm8k: 150/200  0.46 ex/s  eta 108s
+2026-06-11 20:15:19,543 INFO   gsm8k: 160/200  0.47 ex/s  eta 86s
+2026-06-11 20:15:40,568 INFO   gsm8k: 170/200  0.47 ex/s  eta 64s
+2026-06-11 20:16:01,537 INFO   gsm8k: 180/200  0.47 ex/s  eta 43s
+2026-06-11 20:16:22,822 INFO   gsm8k: 190/200  0.47 ex/s  eta 21s
+2026-06-11 20:16:44,070 INFO   gsm8k: 200/200  0.47 ex/s  eta 0s
+2026-06-11 20:16:44,390 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results/gsm8k_routing.npz  (429s, 577200 tokens routed)
+2026-06-11 20:16:44,390 INFO ------------------------------------------------------------
+2026-06-11 20:16:44,390 INFO [2/6] dataset=svamp domain=math
+2026-06-11 20:16:47,464 INFO   loaded 200 examples
+2026-06-11 20:17:12,394 INFO   svamp: 10/200  0.40 ex/s  eta 474s
+2026-06-11 20:17:33,331 INFO   svamp: 20/200  0.44 ex/s  eta 413s
+2026-06-11 20:17:53,979 INFO   svamp: 30/200  0.45 ex/s  eta 377s
+2026-06-11 20:18:14,838 INFO   svamp: 40/200  0.46 ex/s  eta 349s
+2026-06-11 20:18:35,556 INFO   svamp: 50/200  0.46 ex/s  eta 324s
+2026-06-11 20:18:56,300 INFO   svamp: 60/200  0.47 ex/s  eta 301s
+2026-06-11 20:19:17,104 INFO   svamp: 70/200  0.47 ex/s  eta 278s
+2026-06-11 20:19:37,830 INFO   svamp: 80/200  0.47 ex/s  eta 256s
+2026-06-11 20:19:58,460 INFO   svamp: 90/200  0.47 ex/s  eta 233s
+2026-06-11 20:20:19,341 INFO   svamp: 100/200  0.47 ex/s  eta 212s
+2026-06-11 20:20:40,065 INFO   svamp: 110/200  0.47 ex/s  eta 190s
+2026-06-11 20:21:00,820 INFO   svamp: 120/200  0.47 ex/s  eta 169s
+2026-06-11 20:21:21,577 INFO   svamp: 130/200  0.47 ex/s  eta 148s
+2026-06-11 20:21:42,493 INFO   svamp: 140/200  0.47 ex/s  eta 126s
+2026-06-11 20:22:03,304 INFO   svamp: 150/200  0.47 ex/s  eta 105s
+2026-06-11 20:22:24,145 INFO   svamp: 160/200  0.48 ex/s  eta 84s
+2026-06-11 20:22:44,898 INFO   svamp: 170/200  0.48 ex/s  eta 63s
+2026-06-11 20:23:05,628 INFO   svamp: 180/200  0.48 ex/s  eta 42s
+2026-06-11 20:23:26,421 INFO   svamp: 190/200  0.48 ex/s  eta 21s
+2026-06-11 20:23:47,180 INFO   svamp: 200/200  0.48 ex/s  eta 0s
+2026-06-11 20:23:47,504 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results/svamp_routing.npz  (420s, 398160 tokens routed)
+2026-06-11 20:23:47,505 INFO ------------------------------------------------------------
+2026-06-11 20:23:47,505 INFO [3/6] dataset=humaneval_plus domain=code
+2026-06-11 20:23:50,621 INFO   loaded 164 examples
+2026-06-11 20:24:13,504 INFO   humaneval_plus: 10/164  0.44 ex/s  eta 352s
+2026-06-11 20:24:35,575 INFO   humaneval_plus: 20/164  0.44 ex/s  eta 324s
+2026-06-11 20:24:57,359 INFO   humaneval_plus: 30/164  0.45 ex/s  eta 298s
+2026-06-11 20:25:20,027 INFO   humaneval_plus: 40/164  0.45 ex/s  eta 277s
+2026-06-11 20:25:41,943 INFO   humaneval_plus: 50/164  0.45 ex/s  eta 254s
+2026-06-11 20:26:03,559 INFO   humaneval_plus: 60/164  0.45 ex/s  eta 230s
+2026-06-11 20:26:27,003 INFO   humaneval_plus: 70/164  0.45 ex/s  eta 210s
+2026-06-11 20:26:49,658 INFO   humaneval_plus: 80/164  0.45 ex/s  eta 188s
+2026-06-11 20:27:11,996 INFO   humaneval_plus: 90/164  0.45 ex/s  eta 166s
+2026-06-11 20:27:34,352 INFO   humaneval_plus: 100/164  0.45 ex/s  eta 143s
+2026-06-11 20:27:56,977 INFO   humaneval_plus: 110/164  0.45 ex/s  eta 121s
+2026-06-11 20:28:19,780 INFO   humaneval_plus: 120/164  0.45 ex/s  eta 99s
+2026-06-11 20:28:42,699 INFO   humaneval_plus: 130/164  0.45 ex/s  eta 76s
+2026-06-11 20:29:05,175 INFO   humaneval_plus: 140/164  0.45 ex/s  eta 54s
+2026-06-11 20:29:27,999 INFO   humaneval_plus: 150/164  0.44 ex/s  eta 31s
+2026-06-11 20:29:50,573 INFO   humaneval_plus: 160/164  0.44 ex/s  eta 9s
+2026-06-11 20:30:00,322 INFO   humaneval_plus: 164/164  0.44 ex/s  eta 0s
+2026-06-11 20:30:00,626 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results/humaneval_plus_routing.npz  (370s, 1055472 tokens routed)
+2026-06-11 20:30:00,627 INFO ------------------------------------------------------------
+2026-06-11 20:30:00,627 INFO [4/6] dataset=mbpp_plus domain=code
+2026-06-11 20:30:03,509 INFO   loaded 200 examples
+2026-06-11 20:30:28,520 INFO   mbpp_plus: 10/200  0.40 ex/s  eta 475s
+2026-06-11 20:30:53,730 INFO   mbpp_plus: 20/200  0.40 ex/s  eta 452s
+2026-06-11 20:31:19,004 INFO   mbpp_plus: 30/200  0.40 ex/s  eta 428s
+2026-06-11 20:31:44,342 INFO   mbpp_plus: 40/200  0.40 ex/s  eta 403s
+2026-06-11 20:32:09,196 INFO   mbpp_plus: 50/200  0.40 ex/s  eta 377s
+2026-06-11 20:32:34,433 INFO   mbpp_plus: 60/200  0.40 ex/s  eta 352s
+2026-06-11 20:32:59,416 INFO   mbpp_plus: 70/200  0.40 ex/s  eta 327s
+2026-06-11 20:33:24,346 INFO   mbpp_plus: 80/200  0.40 ex/s  eta 301s
+2026-06-11 20:33:49,181 INFO   mbpp_plus: 90/200  0.40 ex/s  eta 276s
+2026-06-11 20:34:14,206 INFO   mbpp_plus: 100/200  0.40 ex/s  eta 251s
+2026-06-11 20:34:39,450 INFO   mbpp_plus: 110/200  0.40 ex/s  eta 226s
+2026-06-11 20:35:04,350 INFO   mbpp_plus: 120/200  0.40 ex/s  eta 201s
+2026-06-11 20:35:29,901 INFO   mbpp_plus: 130/200  0.40 ex/s  eta 176s
+2026-06-11 20:35:50,675 INFO   mbpp_plus: 140/200  0.40 ex/s  eta 149s
+2026-06-11 20:36:10,242 INFO   mbpp_plus: 150/200  0.41 ex/s  eta 122s
+2026-06-11 20:36:29,821 INFO   mbpp_plus: 160/200  0.41 ex/s  eta 97s
+2026-06-11 20:36:49,667 INFO   mbpp_plus: 170/200  0.42 ex/s  eta 72s
+2026-06-11 20:37:09,373 INFO   mbpp_plus: 180/200  0.42 ex/s  eta 47s
+2026-06-11 20:37:29,580 INFO   mbpp_plus: 190/200  0.43 ex/s  eta 23s
+2026-06-11 20:37:49,142 INFO   mbpp_plus: 200/200  0.43 ex/s  eta 0s
+2026-06-11 20:37:49,394 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results/mbpp_plus_routing.npz  (466s, 192864 tokens routed)
+2026-06-11 20:37:49,395 INFO ------------------------------------------------------------
+2026-06-11 20:37:49,395 INFO [5/6] dataset=mnli domain=nli
+2026-06-11 20:37:53,116 INFO   loaded 200 examples
+2026-06-11 20:38:18,858 INFO   mnli: 10/200  0.39 ex/s  eta 489s
+2026-06-11 20:38:40,193 INFO   mnli: 20/200  0.42 ex/s  eta 424s
+2026-06-11 20:39:01,370 INFO   mnli: 30/200  0.44 ex/s  eta 387s
+2026-06-11 20:39:22,446 INFO   mnli: 40/200  0.45 ex/s  eta 357s
+2026-06-11 20:39:43,452 INFO   mnli: 50/200  0.45 ex/s  eta 331s
+2026-06-11 20:40:04,119 INFO   mnli: 60/200  0.46 ex/s  eta 306s
+2026-06-11 20:40:25,103 INFO   mnli: 70/200  0.46 ex/s  eta 282s
+2026-06-11 20:40:46,089 INFO   mnli: 80/200  0.46 ex/s  eta 259s
+2026-06-11 20:41:06,931 INFO   mnli: 90/200  0.46 ex/s  eta 237s
+2026-06-11 20:41:27,722 INFO   mnli: 100/200  0.47 ex/s  eta 215s
+2026-06-11 20:41:48,631 INFO   mnli: 110/200  0.47 ex/s  eta 193s
+2026-06-11 20:42:09,512 INFO   mnli: 120/200  0.47 ex/s  eta 171s
+2026-06-11 20:42:30,664 INFO   mnli: 130/200  0.47 ex/s  eta 149s
+2026-06-11 20:42:51,566 INFO   mnli: 140/200  0.47 ex/s  eta 128s
+2026-06-11 20:43:12,412 INFO   mnli: 150/200  0.47 ex/s  eta 106s
+2026-06-11 20:43:33,396 INFO   mnli: 160/200  0.47 ex/s  eta 85s
+2026-06-11 20:43:54,422 INFO   mnli: 170/200  0.47 ex/s  eta 64s
+2026-06-11 20:44:15,454 INFO   mnli: 180/200  0.47 ex/s  eta 42s
+2026-06-11 20:44:36,294 INFO   mnli: 190/200  0.47 ex/s  eta 21s
+2026-06-11 20:44:57,374 INFO   mnli: 200/200  0.47 ex/s  eta 0s
+2026-06-11 20:44:57,696 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results/mnli_routing.npz  (425s, 434400 tokens routed)
+2026-06-11 20:44:57,696 INFO ------------------------------------------------------------
+2026-06-11 20:44:57,696 INFO [6/6] dataset=snli domain=nli
+2026-06-11 20:45:01,245 INFO   loaded 200 examples
+2026-06-11 20:45:21,753 INFO   snli: 10/200  0.49 ex/s  eta 390s
+2026-06-11 20:45:42,387 INFO   snli: 20/200  0.49 ex/s  eta 370s
+2026-06-11 20:46:03,046 INFO   snli: 30/200  0.49 ex/s  eta 350s
+2026-06-11 20:46:23,618 INFO   snli: 40/200  0.49 ex/s  eta 329s
+2026-06-11 20:46:44,194 INFO   snli: 50/200  0.49 ex/s  eta 309s
+2026-06-11 20:47:04,763 INFO   snli: 60/200  0.49 ex/s  eta 288s
+2026-06-11 20:47:25,438 INFO   snli: 70/200  0.49 ex/s  eta 268s
+2026-06-11 20:47:45,997 INFO   snli: 80/200  0.49 ex/s  eta 247s
+2026-06-11 20:48:06,564 INFO   snli: 90/200  0.49 ex/s  eta 227s
+2026-06-11 20:48:27,323 INFO   snli: 100/200  0.49 ex/s  eta 206s
+2026-06-11 20:48:47,897 INFO   snli: 110/200  0.49 ex/s  eta 185s
+2026-06-11 20:49:08,388 INFO   snli: 120/200  0.49 ex/s  eta 165s
+2026-06-11 20:49:29,080 INFO   snli: 130/200  0.49 ex/s  eta 144s
+2026-06-11 20:49:49,770 INFO   snli: 140/200  0.49 ex/s  eta 124s
+2026-06-11 20:50:10,405 INFO   snli: 150/200  0.49 ex/s  eta 103s
+2026-06-11 20:50:31,142 INFO   snli: 160/200  0.48 ex/s  eta 82s
+2026-06-11 20:50:51,888 INFO   snli: 170/200  0.48 ex/s  eta 62s
+2026-06-11 20:51:12,444 INFO   snli: 180/200  0.48 ex/s  eta 41s
+2026-06-11 20:51:32,745 INFO   snli: 190/200  0.49 ex/s  eta 21s
+2026-06-11 20:51:53,207 INFO   snli: 200/200  0.49 ex/s  eta 0s
+2026-06-11 20:51:53,501 INFO   saved /data1/ai25170474/workspace/magical_moe_probe/results/snli_routing.npz  (412s, 300240 tokens routed)
+2026-06-11 20:51:53,501 INFO ============================================================
+2026-06-11 20:51:53,501 INFO PROBE COMPLETE in 2541s
+2026-06-11 20:51:53,501 INFO Run: python -m src.analyze  to produce FINDINGS.md
+2026-06-11 20:51:53,501 INFO ============================================================
+Loaded 6 datasets: ['gsm8k', 'humaneval_plus', 'mbpp_plus', 'mnli', 'snli', 'svamp']
+H1: SUPPORTED — measurable domain structure in routing.
+H2: SUPPORTED — routing load is imbalanced (dead/hot experts present).
+H3: PARTIAL/FLAT — no strong monotonic depth trend; see peak layer.
+H4: SUPPORTED — routing is low-margin / high-entropy (fragile selection).
+H5: NOT SUPPORTED — domains use largely disjoint experts.
+H6: SUPPORTED — routing fingerprints strongly encode domain.
+
+Wrote /data1/ai25170474/workspace/magical_moe_probe/results/FINDINGS.md
+============================================================
+DONE. See results/FINDINGS.md
+============================================================

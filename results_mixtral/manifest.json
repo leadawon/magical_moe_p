@@ -1,0 +1,49 @@
+{
+  "model": "/data1/ai25170474/models/Mixtral-8x7B-Instruct-v0.1",
+  "num_examples": 60,
+  "max_len": 512,
+  "datasets": {
+    "gsm8k": {
+      "domain": "math",
+      "examples": 60,
+      "tokens_routed": 126048.0,
+      "seconds": 172.196462392807,
+      "output": "/data1/ai25170474/workspace/magical_moe_probe/results_mixtral/gsm8k_routing.npz"
+    },
+    "svamp": {
+      "domain": "math",
+      "examples": 60,
+      "tokens_routed": 84896.0,
+      "seconds": 172.57970213890076,
+      "output": "/data1/ai25170474/workspace/magical_moe_probe/results_mixtral/svamp_routing.npz"
+    },
+    "humaneval_plus": {
+      "domain": "code",
+      "examples": 60,
+      "tokens_routed": 324448.0,
+      "seconds": 174.5157630443573,
+      "output": "/data1/ai25170474/workspace/magical_moe_probe/results_mixtral/humaneval_plus_routing.npz"
+    },
+    "mbpp_plus": {
+      "domain": "code",
+      "examples": 60,
+      "tokens_routed": 44576.0,
+      "seconds": 149.65601801872253,
+      "output": "/data1/ai25170474/workspace/magical_moe_probe/results_mixtral/mbpp_plus_routing.npz"
+    },
+    "mnli": {
+      "domain": "nli",
+      "examples": 60,
+      "tokens_routed": 98912.0,
+      "seconds": 171.5629312992096,
+      "output": "/data1/ai25170474/workspace/magical_moe_probe/results_mixtral/mnli_routing.npz"
+    },
+    "snli": {
+      "domain": "nli",
+      "examples": 60,
+      "tokens_routed": 65056.0,
+      "seconds": 160.88011503219604,
+      "output": "/data1/ai25170474/workspace/magical_moe_probe/results_mixtral/snli_routing.npz"
+    }
+  }
+}

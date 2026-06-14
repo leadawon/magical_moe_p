@@ -1,0 +1,8 @@
+{
+  "P1": "NOT SUPPORTED",
+  "P3": "NOT SUPPORTED \u2014 all 8 matter",
+  "P5": "SUPPORTED \u2014 skewed/domain-gated",
+  "P2": "PARTIAL \u2014 token identity strongly biases routing",
+  "P4": "SUPPORTED \u2014 position 0 routes to a fixed expert set (sink)",
+  "P6": "NOT SUPPORTED \u2014 routing is stable"
+}
