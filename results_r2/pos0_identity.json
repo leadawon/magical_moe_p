@@ -1,0 +1,470 @@
+{
+  "tokenizer": {
+    "bos_token": null,
+    "bos_token_id": null
+  },
+  "per_dataset": {
+    "gsm8k": {
+      "domain": "math",
+      "samples": [
+        {
+          "token_id": 41,
+          "decoded": "J"
+        },
+        {
+          "token_id": 70424,
+          "decoded": "Jordan"
+        },
+        {
+          "token_id": 32,
+          "decoded": "A"
+        },
+        {
+          "token_id": 20217,
+          "decoded": "Tim"
+        },
+        {
+          "token_id": 71541,
+          "decoded": "Domin"
+        },
+        {
+          "token_id": 785,
+          "decoded": "The"
+        },
+        {
+          "token_id": 32,
+          "decoded": "A"
+        },
+        {
+          "token_id": 32,
+          "decoded": "A"
+        },
+        {
+          "token_id": 40344,
+          "decoded": "Joe"
+        },
+        {
+          "token_id": 32,
+          "decoded": "A"
+        }
+      ],
+      "distinct_pos0_ids": 7,
+      "most_common": [
+        [
+          32,
+          4
+        ],
+        [
+          41,
+          1
+        ],
+        [
+          70424,
+          1
+        ],
+        [
+          20217,
+          1
+        ],
+        [
+          71541,
+          1
+        ],
+        [
+          785,
+          1
+        ],
+        [
+          40344,
+          1
+        ]
+      ]
+    },
+    "svamp": {
+      "domain": "math",
+      "samples": [
+        {
+          "token_id": 50744,
+          "decoded": "Josh"
+        },
+        {
+          "token_id": 2715,
+          "decoded": "Ed"
+        },
+        {
+          "token_id": 32,
+          "decoded": "A"
+        },
+        {
+          "token_id": 785,
+          "decoded": "The"
+        },
+        {
+          "token_id": 33,
+          "decoded": "B"
+        },
+        {
+          "token_id": 41484,
+          "decoded": "Mary"
+        },
+        {
+          "token_id": 641,
+          "decoded": "In"
+        },
+        {
+          "token_id": 33,
+          "decoded": "B"
+        },
+        {
+          "token_id": 32631,
+          "decoded": "Jack"
+        },
+        {
+          "token_id": 2679,
+          "decoded": "If"
+        }
+      ],
+      "distinct_pos0_ids": 9,
+      "most_common": [
+        [
+          33,
+          2
+        ],
+        [
+          50744,
+          1
+        ],
+        [
+          2715,
+          1
+        ],
+        [
+          32,
+          1
+        ],
+        [
+          785,
+          1
+        ],
+        [
+          41484,
+          1
+        ],
+        [
+          641,
+          1
+        ],
+        [
+          32631,
+          1
+        ],
+        [
+          2679,
+          1
+        ]
+      ]
+    },
+    "humaneval_plus": {
+      "domain": "code",
+      "samples": [
+        {
+          "token_id": 271,
+          "decoded": "\n\n"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        },
+        {
+          "token_id": 271,
+          "decoded": "\n\n"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        },
+        {
+          "token_id": 1499,
+          "decoded": "from"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        },
+        {
+          "token_id": 198,
+          "decoded": "\n"
+        }
+      ],
+      "distinct_pos0_ids": 3,
+      "most_common": [
+        [
+          198,
+          7
+        ],
+        [
+          271,
+          2
+        ],
+        [
+          1499,
+          1
+        ]
+      ]
+    },
+    "mbpp_plus": {
+      "domain": "code",
+      "samples": [
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        },
+        {
+          "token_id": 7985,
+          "decoded": "Write"
+        }
+      ],
+      "distinct_pos0_ids": 1,
+      "most_common": [
+        [
+          7985,
+          10
+        ]
+      ]
+    },
+    "mnli": {
+      "domain": "nli",
+      "samples": [
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        }
+      ],
+      "distinct_pos0_ids": 1,
+      "most_common": [
+        [
+          41462,
+          10
+        ]
+      ]
+    },
+    "snli": {
+      "domain": "nli",
+      "samples": [
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        },
+        {
+          "token_id": 41462,
+          "decoded": "Prem"
+        }
+      ],
+      "distinct_pos0_ids": 1,
+      "most_common": [
+        [
+          41462,
+          10
+        ]
+      ]
+    }
+  },
+  "all_pos0_ids": [
+    41,
+    70424,
+    32,
+    20217,
+    71541,
+    785,
+    32,
+    32,
+    40344,
+    32,
+    50744,
+    2715,
+    32,
+    785,
+    33,
+    41484,
+    641,
+    33,
+    32631,
+    2679,
+    271,
+    198,
+    198,
+    271,
+    198,
+    198,
+    198,
+    1499,
+    198,
+    198,
+    7985,
+    7985,
+    7985,
+    7985,
+    7985,
+    7985,
+    7985,
+    7985,
+    7985,
+    7985,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462,
+    41462
+  ],
+  "pos0_union_distinct": 19,
+  "all_pos0_identical": false,
+  "pos0_union_decoded": [
+    "A",
+    "B",
+    "Domin",
+    "Ed",
+    "If",
+    "In",
+    "J",
+    "Jack",
+    "Joe",
+    "Jordan",
+    "Josh",
+    "Mary",
+    "Prem",
+    "The",
+    "Tim",
+    "Write",
+    "\\n",
+    "\\n\\n",
+    "from"
+  ],
+  "verdict": "VALID (non-trivial) — pos-0 tokens DIFFER across datasets (and Qwen adds no BOS), yet E1 shows 80.5% pos-0 overlap and 74-79% cross-domain Jaccard. 'same token -> same expert' cannot explain it; position itself drives a fixed sink expert set."
+}

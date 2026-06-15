@@ -1,0 +1,88 @@
+{
+  "tag": "mixtral",
+  "model_path": "/data1/ai25170474/models/Mixtral-8x7B-Instruct-v0.1",
+  "n_per_ds": 60,
+  "top_k": 2,
+  "num_experts": 8,
+  "num_layers": 32,
+  "datasets": [
+    "gsm8k",
+    "svamp",
+    "humaneval_plus",
+    "mbpp_plus",
+    "mnli",
+    "snli"
+  ],
+  "domain_of": {
+    "gsm8k": "math",
+    "svamp": "math",
+    "humaneval_plus": "code",
+    "mbpp_plus": "code",
+    "mnli": "nli",
+    "snli": "nli"
+  },
+  "pairwise_jaccard": {
+    "gsm8k": {
+      "gsm8k": 1.0,
+      "svamp": 1.0,
+      "humaneval_plus": 1.0,
+      "mbpp_plus": 0.9791666666666667,
+      "mnli": 1.0,
+      "snli": 0.9791666666666667
+    },
+    "svamp": {
+      "gsm8k": 1.0,
+      "svamp": 1.0,
+      "humaneval_plus": 1.0,
+      "mbpp_plus": 0.9791666666666667,
+      "mnli": 1.0,
+      "snli": 0.9791666666666667
+    },
+    "humaneval_plus": {
+      "gsm8k": 1.0,
+      "svamp": 1.0,
+      "humaneval_plus": 1.0,
+      "mbpp_plus": 0.9791666666666667,
+      "mnli": 1.0,
+      "snli": 0.9791666666666667
+    },
+    "mbpp_plus": {
+      "gsm8k": 0.9791666666666667,
+      "svamp": 0.9791666666666667,
+      "humaneval_plus": 0.9791666666666667,
+      "mbpp_plus": 1.0,
+      "mnli": 0.9791666666666667,
+      "snli": 1.0
+    },
+    "mnli": {
+      "gsm8k": 1.0,
+      "svamp": 1.0,
+      "humaneval_plus": 1.0,
+      "mbpp_plus": 0.9791666666666667,
+      "mnli": 1.0,
+      "snli": 0.9791666666666667
+    },
+    "snli": {
+      "gsm8k": 0.9791666666666667,
+      "svamp": 0.9791666666666667,
+      "humaneval_plus": 0.9791666666666667,
+      "mbpp_plus": 1.0,
+      "mnli": 0.9791666666666667,
+      "snli": 1.0
+    }
+  },
+  "sink_set_size_mean": {
+    "gsm8k": 2.0,
+    "svamp": 2.0,
+    "humaneval_plus": 2.0,
+    "mbpp_plus": 2.0,
+    "mnli": 2.0,
+    "snli": 2.0
+  },
+  "random_baseline_overlap": 0.2583828125,
+  "domain_jaccard_rollup": {
+    "code_math": 0.9791666666666667,
+    "code_nli": 0.9791666666666667,
+    "math_nli": 1.0
+  }
+}

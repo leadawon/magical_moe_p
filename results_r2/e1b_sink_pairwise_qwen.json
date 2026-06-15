@@ -1,0 +1,88 @@
+{
+  "tag": "qwen",
+  "model_path": "/data1/ai25170474/workspace/magical_moe_probe/model",
+  "n_per_ds": 30,
+  "top_k": 8,
+  "num_experts": 128,
+  "num_layers": 48,
+  "datasets": [
+    "gsm8k",
+    "svamp",
+    "humaneval_plus",
+    "mbpp_plus",
+    "mnli",
+    "snli"
+  ],
+  "domain_of": {
+    "gsm8k": "math",
+    "svamp": "math",
+    "humaneval_plus": "code",
+    "mbpp_plus": "code",
+    "mnli": "nli",
+    "snli": "nli"
+  },
+  "pairwise_jaccard": {
+    "gsm8k": {
+      "gsm8k": 1.0,
+      "svamp": 0.8860945767195766,
+      "humaneval_plus": 0.7134943181818182,
+      "mbpp_plus": 0.7803240740740741,
+      "mnli": 0.7790509259259258,
+      "snli": 0.7767361111111111
+    },
+    "svamp": {
+      "gsm8k": 0.8860945767195766,
+      "svamp": 0.9791666666666666,
+      "humaneval_plus": 0.7038773148148149,
+      "mbpp_plus": 0.7848958333333332,
+      "mnli": 0.7748263888888888,
+      "snli": 0.7727430555555554
+    },
+    "humaneval_plus": {
+      "gsm8k": 0.7134943181818182,
+      "svamp": 0.7038773148148149,
+      "humaneval_plus": 1.0,
+      "mbpp_plus": 0.7237674362674363,
+      "mnli": 0.7262603137603136,
+      "snli": 0.7278806841306841
+    },
+    "mbpp_plus": {
+      "gsm8k": 0.7803240740740741,
+      "svamp": 0.7848958333333332,
+      "humaneval_plus": 0.7237674362674363,
+      "mbpp_plus": 1.0,
+      "mnli": 0.7409511784511785,
+      "snli": 0.7388678451178451
+    },
+    "mnli": {
+      "gsm8k": 0.7790509259259258,
+      "svamp": 0.7748263888888888,
+      "humaneval_plus": 0.7262603137603136,
+      "mbpp_plus": 0.7409511784511785,
+      "mnli": 1.0,
+      "snli": 0.9976851851851851
+    },
+    "snli": {
+      "gsm8k": 0.7767361111111111,
+      "svamp": 0.7727430555555554,
+      "humaneval_plus": 0.7278806841306841,
+      "mbpp_plus": 0.7388678451178451,
+      "mnli": 0.9976851851851851,
+      "snli": 1.0
+    }
+  },
+  "sink_set_size_mean": {
+    "gsm8k": 7.125,
+    "svamp": 7.458333333333333,
+    "humaneval_plus": 8.0,
+    "mbpp_plus": 8.0,
+    "mnli": 8.0625,
+    "snli": 8.041666666666666
+  },
+  "random_baseline_overlap": 0.1239804687499999,
+  "domain_jaccard_rollup": {
+    "code_math": 0.8015625000000001,
+    "code_nli": 0.7718273420479304,
+    "math_nli": 0.7825810185185186
+  }
+}

@@ -229,3 +229,102 @@ shuffle → 앞 80개, max_length=160). pos0_count=80 / distinct=24로 원본과
   일치는 P2 기여가 큼. P4를 P2와 완전히 분리하려면 pos-0 토큰이 다양한 gsm8k/svamp
   단독 pos-0 일치를 별도 측정하는 것이 더 깨끗함(후속 가능, 현재 E1 교차도메인
   Jaccard가 그 역할을 부분 수행).
+
+---
+
+## 2026-06-15 — [작업1] E1 pos-0 토큰 정체 독립 재현 (재현성 확정용)
+
+**동기**: 회의 직전, E1의 "pos-0 일치 80.5%"가 trivial(모든 입력의 첫 토큰이 동일
+특수토큰=BOS라서 당연히 같은 expert로 가는 것)인지 아닌지를, 기록만 믿지 않고
+**스크립트로 재실행**해 확정. 6 데이터셋의 pos-0 token_id/decode를 샘플 5~10개씩
+출력하고, 데이터셋 간 동일성 여부와 판정을 자동 산출하도록 함.
+
+**방법(재현 가능)**: 신규 `src/probe_pos0_identity.py`. probe_sink.py와 **동일한
+토크나이징** `tok(ex["text"], return_tensors="pt", truncation=True, max_length=128)`
+(default `add_special_tokens=True`)로 `input_ids[0,0]`만 검사. GPU/모델 forward 불필요
+(pos-0은 토크나이저만으로 결정). 실행:
+`/data1/ai25170474/workspace/venvs/qwenmoevenv/bin/python3.10 -m src.probe_pos0_identity`
+→ 콘솔 + `results_r2/pos0_identity.json`. (venv 위치: 메모리의 `qwenmoevenv`는
+`/data1/ai25170474/workspace/venvs/qwenmoevenv`, python3.10 / transformers 4.51.0.)
+
+**결과 (results_r2/pos0_identity.json)**:
+- **`bos_token = null`** → Qwen 토크나이저는 BOS를 안 붙임. pos-0은 특수토큰이 아니라
+  **실제 첫 단어 토큰**.
+- 데이터셋별 pos-0 distinct (샘플 10개 중):
+
+  | 데이터셋 | 도메인 | distinct | pos-0 토큰 예시 |
+  |---|---|---|---|
+  | gsm8k | math | **7** | `A`(×4),`J`,`Jordan`,`Tim`,`Domin`,`The`,`Joe` |
+  | svamp | math | **9** | `Josh`,`Ed`,`A`,`The`,`B`(×2),`Mary`,`In`,`Jack`,`If` |
+  | humaneval+ | code | 3 | `\n`(×7),`\n\n`(×2),`from` |
+  | mbpp+ | code | 1 | `Write`(×10) |
+  | mnli | nli | 1 | `Prem`(×10) |
+  | snli | nli | 1 | `Prem`(×10) |
+
+- 6 데이터셋 union = **19종**(A,B,Domin,Ed,If,In,J,Jack,Joe,Jordan,Josh,Mary,Prem,
+  The,Tim,Write,\n,\n\n,from). **`all_pos0_identical = false`**.
+
+**판정(자동 산출): 발견 유효 (trivial 아님).** 전부 동일한 BOS가 아니라 데이터셋마다
+다른 *일반 토큰*인데도 E1의 pos-0 일치 80.5% / 교차도메인 Jaccard 74~79%가 나온다 →
+"같은 토큰→같은 expert"로 설명 불가, **위치(pos-0) 자체가 고정 sink expert 집합을
+부른다**는 주장 확증. 특히 math(gsm8k 7종 / svamp 9종)는 pos-0이 매우 다양함에도 sink가
+강해 trivial 반박을 강화. 2026-06-15 앞선 동일 점검과 일치(독립 재현 성공).
+**유의(정직)**: mbpp+(`Write`)·nli(`Prem`)는 데이터셋 *내부* pos-0이 단일 토큰이라 그
+내부 일치엔 토큰 동일성 효과가 섞임 — 단 핵심 지표인 교차도메인 Jaccard는 서로 다른
+토큰 간 비교이고 math의 pos-0은 다양하므로 sink 결론은 토큰 동일성으로 환원되지 않음.
+
+---
+
+## 2026-06-15 — E1b: 데이터셋 단위(6×6) pos-0 sink Jaccard 매트릭스 (Qwen+Mixtral)
+
+**동기**: E1은 도메인 단위(math/code/nli, 3쌍) Jaccard만 저장했음. P2(어휘) 반박을 더
+강하게 닫기 위해 **데이터셋 6개 쌍별** 매트릭스를 계산 — 특히 *같은 도메인이지만 첫
+토큰이 다른* gsm8k↔svamp 같은 쌍이 높게 겹치면 "위치 효과"가 직접 드러남.
+
+**코드/방법**: 신규 `src/probe_sink_pairwise.py`(모델 비종속, moe_adapter 사용). E1과
+동일 — forward-only, gate hook, 데이터셋별 pos-0 sink 집합(예시 ≥50% top-k에 든 expert)
+간 층평균 Jaccard. baseline = 깊은 위치(≥20) 토큰 쌍 overlap(E1과 동일 정의).
+- **버그 발견·수정**: 1차 실행 때 baseline을 pos-0끼리 비교해 80.7%로 잘못 나옴(pos-0은
+  죄다 sink라 당연). 깊은 위치(≥20) 비교로 수정 → Qwen 12.4%(E1 12.1%와 일치) 확인.
+- **GPU**: 0~3 사용(타 사용자 root vLLM이 각 2.7GB 점유 중이나 ~21.8GB 여유라 공존 성공,
+  OOM 없음). Qwen ~3분, Mixtral ~20분(N=60, CPU offload).
+
+**실행**:
+- Qwen: `CUDA_VISIBLE_DEVICES=0,1,2,3 python3.10 -m src.probe_sink_pairwise`
+  → `results_r2/e1b_sink_pairwise_qwen.json` (N=30)
+- Mixtral: `PROBE_MODEL_PATH=.../Mixtral-8x7B-Instruct-v0.1 PROBE_OUT_DIR=.../results_r2_mixtral
+  PROBE_TAG=mixtral PROBE_N_PER_DS=60 CUDA_VISIBLE_DEVICES=0,1,2,3 python3.10 -m src.probe_sink_pairwise`
+  → `results_r2_mixtral/e1b_sink_pairwise_mixtral.json`
+
+**Qwen3 결과 (Jaccard %, baseline 12.4%)**:
+| | gsm8k | svamp | human+ | mbpp+ | mnli | snli |
+|--|--|--|--|--|--|--|
+| gsm8k | — | **88.6** | 71.3 | 78.0 | 77.9 | 77.7 |
+| svamp | 88.6 | — | 70.4 | 78.5 | 77.5 | 77.3 |
+| human+ | 71.3 | 70.4 | — | 72.4 | 72.6 | 72.8 |
+| mbpp+ | 78.0 | 78.5 | 72.4 | — | 74.1 | 73.9 |
+| mnli | 77.9 | 77.5 | 72.6 | 74.1 | — | **99.8** |
+| snli | 77.7 | 77.3 | 72.8 | 73.9 | 99.8 | — |
+- 같은 도메인 내부: gsm8k↔svamp **88.6%**, mnli↔snli **99.8%**(둘 다 첫 토큰 다양/상이).
+- 다른 도메인끼리도 70~78%(baseline 12.4%의 6배+). 도메인 rollup(code∩math 80.2,
+  math∩nli 78.3, code∩nli 77.2)은 E1 원본(78.9/77.8/73.7)과 정합 → **E1 재현 확인**.
+
+**Mixtral 결과 (Jaccard %, baseline 25.8%; top-2/8 experts라 우연 겹침 자체가 높음)**:
+| | gsm8k | svamp | human+ | mbpp+ | mnli | snli |
+|--|--|--|--|--|--|--|
+| gsm8k | — | 100 | 100 | 97.9 | 100 | 97.9 |
+| svamp | 100 | — | 100 | 97.9 | 100 | 97.9 |
+| human+ | 100 | 100 | — | 97.9 | 100 | 97.9 |
+| mbpp+ | 97.9 | 97.9 | 97.9 | — | 97.9 | 100 |
+| mnli | 100 | 100 | 100 | 97.9 | — | 97.9 |
+| snli | 97.9 | 97.9 | 97.9 | 100 | 97.9 | — |
+- 모든 쌍 **97.9~100%** = 데이터셋·도메인·첫토큰 전부 무관하게 거의 동일 sink 집합.
+  sink 집합 크기 2.0/2 = top-2를 통째로 sink가 점유. E1 Mixtral(pos0 99%)과 정합.
+
+**판정(작업 목적 달성)**: 데이터셋 단위로 봐도 sink는 **위치 효과**다.
+1. **gsm8k↔svamp 88.6%(Qwen)** — 같은 math지만 첫 토큰이 제각각(A/Jordan vs Josh/Ed)
+   인데도 sink 집합 거의 동일 → "같은 토큰이라서"(P2)로 환원 불가.
+2. 다른 도메인 쌍(서로 다른 토큰)도 70~78% ≫ baseline 12.4% → 토큰 무관.
+3. Mixtral은 97.9~100%로 더 극단적 — 입도 무관 보편성 재확인.
+- **정직한 한계**: 여전히 mbpp(`Write`)·nli(`Prem`) *내부*는 단일 토큰. 그러나 매트릭스의
+  *비대각·교차도메인* 칸들은 모두 서로 다른 토큰 비교이므로 P2 반박 논거는 유효.
